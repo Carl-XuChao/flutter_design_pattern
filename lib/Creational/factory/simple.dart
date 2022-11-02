@@ -54,7 +54,7 @@ class RuleConfigParserFactory {
   };
 }
 
-abstract class IRuleConfigParser {
+class IRuleConfigParser {
   RuleConfig parse(String config) => RuleConfig(config);
 }
 

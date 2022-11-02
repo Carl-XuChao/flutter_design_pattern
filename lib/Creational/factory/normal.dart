@@ -4,6 +4,7 @@ import 'simple.dart';
 
 class _RuleConfigSource {
   RuleConfig? load(String ruleConfigFilePath) {
+    /// 方法一： if匹配创建工厂对象
     // IRuleConfigParserFactory parserFactory = JsonRuleConfigParserFactory();
     // switch (ruleConfigFilePath) {
     //   case 'json':
@@ -20,6 +21,7 @@ class _RuleConfigSource {
     //     break;
     // }
 
+    /// 方法二： 缓存工厂对象
     IRuleConfigParserFactory? parserFactory =
         _RuleConfigParserFactoryMap.getParseFactory(ruleConfigFilePath);
     if (parserFactory == null) return null;
